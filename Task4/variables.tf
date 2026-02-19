@@ -22,6 +22,16 @@ variable "disk_size_GB" {
   default = "10"
 }
 
+variable "vm_cores" {
+  type    = string
+  default = "2"
+}
+
+variable "is_auto_delete_enabled" {
+  type    = bool
+  default = true
+}
+
 variable "disk_type" {
   type    = string
   default = "network-ssd"

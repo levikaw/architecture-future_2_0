@@ -6,12 +6,12 @@ resource "yandex_compute_instance" "self-service-portal" {
   zone                      = var.zone
 
   resources {
-    cores  = "2"
+    cores = var.vm_cores
     memory = "4"
   }
 
   boot_disk {
-    auto_delete = true
+    auto_delete = var.is_auto_delete_enabled
     disk_id     = yandex_compute_disk.self-service-portal-boot-disk.id
   }
 
@@ -32,12 +32,12 @@ resource "yandex_compute_instance" "medicine-service" {
   zone                      = var.zone
 
   resources {
-    cores  = "2"
+    cores = var.vm_cores
     memory = "4"
   }
 
   boot_disk {
-    auto_delete = true
+    auto_delete = var.is_auto_delete_enabled
     disk_id     = yandex_compute_disk.medicine-service-boot-disk.id
   }
 
@@ -58,12 +58,12 @@ resource "yandex_compute_instance" "finance-service" {
   zone                      = var.zone
 
   resources {
-    cores  = "2"
+    cores = var.vm_cores
     memory = "4"
   }
 
   boot_disk {
-    auto_delete = true
+    auto_delete = var.is_auto_delete_enabled
     disk_id     = yandex_compute_disk.finance-service-boot-disk.id
   }
 
@@ -84,12 +84,12 @@ resource "yandex_compute_instance" "clinic-service" {
   zone                      = var.zone
 
   resources {
-    cores  = "2"
+    cores = var.vm_cores
     memory = "4"
   }
 
   boot_disk {
-    auto_delete = true
+    auto_delete = var.is_auto_delete_enabled
     disk_id     = yandex_compute_disk.clinic-service-boot-disk.id
   }
 
@@ -110,12 +110,12 @@ resource "yandex_compute_instance" "partner-service" {
   zone                      = var.zone
 
   resources {
-    cores  = "2"
+    cores = var.vm_cores
     memory = "4"
   }
 
   boot_disk {
-    auto_delete = true
+    auto_delete = var.is_auto_delete_enabled
     disk_id     = yandex_compute_disk.partner-service-boot-disk.id
   }
 
@@ -136,12 +136,12 @@ resource "yandex_compute_instance" "data-warehouse" {
   zone                      = var.zone
 
   resources {
-    cores  = "2"
+    cores = var.vm_cores
     memory = "4"
   }
 
   boot_disk {
-    auto_delete = true
+    auto_delete = var.is_auto_delete_enabled
     disk_id     = yandex_compute_disk.data-warehouse-boot-disk.id
   }
 
